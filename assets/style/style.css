@@ -1,0 +1,364 @@
+@font-face {
+  font-family: Inter Variable;
+  src: url(../fonts/static/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: Inter Variable Bold;
+  src: url(../fonts/static/Inter-Bold.ttf);
+}
+
+@font-face {
+  font-family: Inter Variable ExtraBold;
+  src: url(../fonts/static/Inter-ExtraBold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body {
+  font-family: Inter Variable;
+  background: var(--off-white);
+  color: var(--very-dark-blue);
+}
+
+p {
+  font-size: 15px;
+}
+
+.header-container {
+  position: relative; 
+  z-index: 9; 
+  width: 100%; 
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  height: 120px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  height: 36px;
+}
+
+.nav-menu-button {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  font-weight: 400;
+  z-index: 99;
+  overflow-x: hidden;
+}
+
+.nav-close-button {
+  display: none;
+  z-index: 15;
+  cursor: pointer;
+}
+
+.nav-menu.nav-menu-active {
+  position: fixed;
+  height: 100vh;
+  padding: 0;
+  top: 0;
+  left: 100px;
+  display: block;
+  width: 100%;
+  background: var(--off-white);
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-menu-active .nav-close-button {
+  display: block;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  right: 122px;
+  top: 35px;
+}
+
+.nav-menu-active .home-link {
+  padding-top: 120px;
+}
+
+.nav-menu.nav-menu-active li {
+  margin: 2rem;
+  width: fit-content;
+}
+
+.nav-menu.nav-menu-active li a {
+  font-weight: 700;
+}
+
+.nav-menu-link {
+  color: var(--very-dark-blue);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-container-background {
+  background-color: var(--very-dark-blue);
+  opacity: 0;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  visibility: hidden;
+}
+
+.nav-container-background-active {
+  visibility: visible;
+  opacity: 0.5;
+  z-index: 12;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.hero-container {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.hero-container-title {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1rem auto;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-family: Inter Variable ExtraBold;
+  line-height: 4.5rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.hero-button {
+  text-transform: uppercase;
+  padding: 0.8rem 1.8rem;
+  background: var(--soft-red);
+  text-decoration: none;
+  color: var(--off-white);
+  width: fit-content;
+  letter-spacing: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-news {
+  min-width: 320px;
+  width: 100%;
+  background: var(--very-dark-blue);
+  color: white;
+  padding: 2rem 1.5rem;
+}
+
+.hero-news-title {
+  color: var(--soft-orange);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: Inter Variable Bold;
+}
+
+.hero-news-container-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.hero-news-subtitle {
+  font-size: 1.1rem;
+  font-family: Inter Variable Bold;
+  margin-bottom: 0.8rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-news-content {
+  color: var(--dark-grayish-blue);
+  line-height: 1.8rem;
+  font-weight: 600;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 4rem auto;
+  gap: 4rem;
+}
+
+.blog-item-container {
+  display: flex;
+  gap: 1rem;
+  height: 130px;
+}
+
+.blog-item-img {
+  height: 100%;
+}
+
+.blog-item-counter {
+  color: var(--grayish-blue);
+  font-size: 1.8rem;
+}
+
+.blog-title {
+  font-family: Inter Variable ExtraBold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: fit-content;
+  transition: all 0.2s ease-in-out;
+}
+
+.blog-description {
+  line-height: 1.5rem;
+}
+
+.attribution { 
+  font-size: 0.6rem; 
+  text-align: center; 
+  padding-bottom: 1rem; 
+}
+
+.attribution a { 
+  font-size: 0.8rem; 
+  color: var(--dark-grayish-blue);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.middle {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--dark-grayish-blue);
+  border-bottom: 1px solid var(--dark-grayish-blue);
+}
+
+.nav-menu-link:hover {
+  color: var(--soft-red);
+}
+
+.hero-button:hover {
+  background: var(--very-dark-blue);
+}
+
+.hero-news-subtitle:hover {
+  color: var(--soft-orange);
+  cursor: pointer;
+}
+
+.blog-title:hover {
+  color: var(--soft-red);
+  cursor: pointer;
+}
+
+.attribution a:hover {
+  color: var(--very-dark-blue);
+}
+
+@media screen and (max-width: 620px) {
+  .nav-container {
+    margin: auto 1rem;
+    height: 100px;
+  }
+
+  .nav-menu-button {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    height: 100vh;
+    padding: 0;
+    top: 0;
+    left: 2000px;
+    display: grid;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .main-container{
+    margin: auto 1rem;
+  }
+
+  .hero-container {
+    display: block;
+    gap: 0;
+  }
+
+  .hero-container-title {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hero-img {
+    height: 380px;
+    object-fit: cover;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .hero-description {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-button {
+    margin-bottom: 1.5rem;
+    padding: 1.2rem 1.8rem;
+  }
+
+  .blog-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .blog-title {
+    font-size: 1.1rem;
+  }
+}
